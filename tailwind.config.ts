@@ -2,9 +2,10 @@ import type { Config } from "tailwindcss";
 
 export default {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/flowbite/**/*.js"  
   ],
   theme: {
     extend: {
@@ -12,7 +13,13 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily:{
+        proxima: ["rama-gothic-c", "sans-serif"],
+      
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require("flowbite/plugin")//Imports flowbite as plugin
+  ],
 } satisfies Config;
