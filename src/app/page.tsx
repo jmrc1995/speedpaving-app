@@ -1,5 +1,5 @@
 import { Maintenance } from "../../components/organisms/Maintenance";
-
+import "../app/globals.css"
 export default function Home() {
   return (
     <div className="flex justify-center">

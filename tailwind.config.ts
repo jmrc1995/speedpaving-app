@@ -7,11 +7,13 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/flowbite/**/*.js"  
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+
       },
       fontFamily:{
         proxima: ["rama-gothic-c", "sans-serif"],

@@ -3,30 +3,48 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-/* Import Flowbite */
-@plugin "flowbite/plugin";
+/* ✅ Default Light Mode */
 :root {
-  --background: #ffffff;
+  --background: rgba(240, 240, 201, 0.8);
   --foreground: #171717;
+  --alert: #D74E09
+  --glass-bg: rgba(255, 255, 255, 0.2); /* More transparency */
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-shadow: rgba(0, 0, 0, 0.2);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ✅ Dark Mode */
+.dark {
+  --background: #124E78;
+  --foreground: #f0f0c9;
+  --glass-bg: rgba(0, 0, 0, 0.2);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: rgba(255, 255, 255, 0.1);
+}
+
+/* ✅ Glass Effect */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 6px 15px var(--glass-shadow);
+  border-radius: 16px;
+  padding: 1rem;
+  transition: all 0.4s ease-in-out;
+}
+
+/* ✅ Ensure Text & Background Transition Smoothly */
+.text-foreground {
+  color: var(--foreground);
+  transition: color 0.3s ease-in-out;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+  backdrop-filter: blur(10px);
 }
-
 
 .h1-font {
   font-family: 'rama-gothic-c', sans-serif;
