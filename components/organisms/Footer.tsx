@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Phone, MapPin, Facebook, Instagram, Mail } from "lucide-react";
+import { Phone, MapPin, Facebook, Instagram, Mail, Building } from "lucide-react"; // ✅ Add Building icon here
 
 export const Footer = () => {
   return (
@@ -26,6 +26,8 @@ export const Footer = () => {
 
             <div className="space-y-2 leading-relaxed text-base">
               <p className="font-semibold text-white text-lg mb-1">Contact</p>
+
+              {/* Cell number */}
               <div className="flex items-center gap-2 text-gray-200">
                 <Phone size={16} />
                 <a
@@ -35,10 +37,25 @@ export const Footer = () => {
                   (908) 413-5002
                 </a>
               </div>
+
+              {/* Office number */}
+              <div className="flex items-center gap-2 text-gray-200">
+                <Building size={16} />
+                <a
+                  href="tel:19082893085"
+                  className="hover:text-yellow-300 transition"
+                >
+                  (908) 289-3085
+                </a>
+              </div>
+
+              {/* Location */}
               <div className="flex items-center gap-2 text-gray-200">
                 <MapPin size={16} />
                 <span>Elizabeth, NJ 07206</span>
               </div>
+
+              {/* Email */}
               <div className="flex items-center gap-2 text-gray-200">
                 <Mail size={16} />
                 <a
@@ -54,22 +71,7 @@ export const Footer = () => {
           {/* Right: Links */}
           <div className="flex flex-col sm:flex-row justify-between gap-10">
             {/* Company */}
-            <div>
-              {/* <p className="font-semibold mb-3 text-lg">Company</p>
-              <ul className="space-y-2 text-base text-gray-200">
-                <li className="hover:text-yellow-300 transition cursor-pointer">
-                  About
-                </li>
-                <li>
-                  <a
-                    href="mailto:wspeedsr@gmail.com"
-                    className="hover:text-yellow-300 transition"
-                  >
-                    Email
-                  </a>
-                </li>
-              </ul> */}
-            </div>
+            <div></div>
 
             {/* Social */}
             <div>
@@ -100,12 +102,12 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Optional CTA */}
+        {/* CTA */}
         <p className="text-sm text-center mt-10 text-gray-400">
           Follow us for project highlights and seasonal paving tips.
         </p>
 
-        {/* Bottom Copyright */}
+        {/* Bottom */}
         <div className="mt-6 border-t border-white/20 pt-4 text-center text-xs opacity-70">
           ©1987 ⓒ Speed Paving, LLC
         </div>
