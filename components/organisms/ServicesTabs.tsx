@@ -158,7 +158,53 @@ export const ServicesTabs = () => {
       ),
     },
     {
-      label: translateText(language, "Retained Walls", "Muros de Contención"),
+      label: translateText(language, "Belgium Blocks", "Bloques Belgas"),
+      icon: (
+        <Image
+          src="/sp-belgian_block--svg.svg"
+          alt="Pavers Icon"
+          width={24}
+          height={24}
+          className="w-6 h-6"
+        />
+      ),
+      content: (
+        <div className="pt-10 pb-16 w-full">
+          <div className="w-full sm:max-w-6xl sm:mx-auto overflow-hidden">
+            <ServiceCarousel
+              title={translateText(language, "Belgium Blocks", "Bloques Belgas")}
+              subtitle={translateText(
+                language,
+                "Smart. Strong. Sustainable.",
+                "Inteligente. Resistente. Sostenible."
+              )}
+              images={[
+                { src: "/sp-belgian-blocks_01NEW--pic.jpeg", alt: "Belgium Block 1" },
+                { src: "/sp-belgian-blocks_02NEW--pic.jpeg", alt: "Belgium Block 2" },
+                { src: "/sp-belgian-blocks_03NEW--pic.jpeg", alt: "Belgium Block 3" },
+                { src: "/sp-belgian-blocks_04NEW--pic.jpeg", alt: "Belgium Block 4" },
+              ]}
+              features={[
+                {
+                  title: translateText(
+                    language,
+                    "Custom Style for Outdoor Surfaces",
+                    "Estilo personalizado para exteriores"
+                  ),
+                  description: translateText(
+                    language,
+                    "Add character and charm with custom paver installations. Ideal for walkways, patios, and driveways. Available in a variety of styles and colors.",
+                    "Agrega carácter y encanto con instalaciones personalizadas de adoquines. Ideales para caminos, patios y entradas. Disponible en diversos estilos y colores."
+                  ),
+                },
+              ]}
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      label: translateText(language, "Retaining Walls", "Muros de Contención"),
       icon: (
         <Image
           src="/sp-retained-walls--svg.svg"
@@ -172,7 +218,7 @@ export const ServicesTabs = () => {
         <div className="pt-10 pb-16 w-full">
           <div className="w-full sm:max-w-6xl sm:mx-auto overflow-hidden">
             <ServiceCarousel
-              title={translateText(language, "Retained Walls", "Muros de Contención")}
+              title={translateText(language, "Retaining Walls", "Muros de Contención")}
               subtitle={translateText(
                 language,
                 "Smart. Strong. Sustainable.",
@@ -180,7 +226,7 @@ export const ServicesTabs = () => {
               )}
               images={[...Array(4)].map((_, i) => ({
                 src: `/sp-retained_walls_${i + 1}--pic.jpg`,
-                alt: `Retained Walls Paving ${i + 1}`,
+                alt: `Retaining Walls ${i + 1}`,
               }))}
               features={[
                 {
@@ -227,8 +273,8 @@ export const ServicesTabs = () => {
                 { src: "/sp-seal-coating_9PRV--pic.jpeg", alt: "Fresh Seal Coating Project 9" },
                 { src: "/sp-seal-coating_10PRV--pic.jpeg", alt: "Seal Coating Crack Repair 10" },
                 { src: "/sp-seal-coating_11PRV--pic.jpeg", alt: "Driveway Seal Coating 11" },
-                ...Array(7).fill(0).map((_, i) => ({
-                  src: `/sp-seal-coating_${i + 1}--pic.jpg`,
+                ...Array(1).fill(0).map((_, i) => ({
+                  src: `/sp-seal-coating_${1}--pic.jpg`,
                   alt: `Seal Coating Project ${i + 1}`,
                 })),
               ]}
