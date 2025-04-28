@@ -1,28 +1,65 @@
-@import url("https://use.typekit.net/bba3jhs.css");
+/* ✅ Fonts */
+@import url("https://use.typekit.net/bba3jhs.css"); /* Rama Gothic */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;900&display=swap');
+
+/* ✅ Tailwind Base */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ✅ Default Light Mode */
+/* ✅ Custom Animations */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+.hover\\:animate-wiggle:hover {
+  animation: wiggle 0.3s ease-in-out;
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+
+/* ✅ Grain Overlay */
+.grain-overlay {
+  pointer-events: none;
+  content: "";
+  position: relative;
+  top: -100%;
+  left: -50%;
+  width: 300%;
+  height: 300%;
+  opacity: 0.55;
+  background-image: url("/binding_dark.png");
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  mix-blend-mode: overlay;
+  animation: grain 6s steps(10) infinite;
+  z-index: 20;
+}
+
+/* ✅ Light Theme Variables */
 :root {
-  --background: rgba(240, 240, 201, 0.8);
-  --foreground: #171717;
-  --alert: #D74E09
-  --glass-bg: rgba(255, 255, 255, 0.2); /* More transparency */
+  --background: #124E78;
+  --foreground: #f0f0c9;
+  --black: #000000;
+  --alert: #D74E09;
+  --glass-bg: rgba(255, 255, 255, 0.2);
   --glass-border: rgba(255, 255, 255, 0.4);
   --glass-shadow: rgba(0, 0, 0, 0.2);
 }
 
-/* ✅ Dark Mode */
-.dark {
-  --background: #124E78;
-  --foreground: #f0f0c9;
-  --glass-bg: rgba(0, 0, 0, 0.2);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-shadow: rgba(255, 255, 255, 0.1);
-}
-
-/* ✅ Glass Effect */
+/* ✅ Glass UI */
 .glass {
   background: var(--glass-bg);
   backdrop-filter: blur(16px) saturate(180%);
@@ -33,25 +70,53 @@
   transition: all 0.4s ease-in-out;
 }
 
-/* ✅ Ensure Text & Background Transition Smoothly */
-.text-foreground {
-  color: var(--foreground);
-  transition: color 0.3s ease-in-out;
-}
-
-body {
+/* ✅ Global Styles */
+html, body {
   color: var(--foreground);
   background: var(--background);
   transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
   backdrop-filter: blur(10px);
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  height: 100%;
 }
 
+body {
+  padding-top: env(safe-area-inset-top);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* ✅ Typography */
 .h1-font {
   font-family: 'rama-gothic-c', sans-serif;
-  font-weight: 700;
-
+  font-weight: 900;
 }
 
+.body-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+}
 
+.text-foreground {
+  color: var(--foreground);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  transition: color 0.3s ease-in-out;
+}
 
+.text-body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  color: var(--foreground);
+}
 
+.color-2 {
+  color: var(--background);
+}
+
+.p-font {
+  font-family: "Roboto", sans-serif;
+}

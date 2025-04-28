@@ -1,11 +1,29 @@
-import { Maintenance } from "../../components/organisms/Maintenance";
-import "../app/globals.css"
+// import { Maintenance } from "../../components/organisms/Maintenance";
+import { Banner } from "../../components/organisms/Banner";
+import { ServicesTabs } from "../../components/organisms/ServicesTabs";
+import { About } from "../../components/organisms/About";
+import "../app/globals.css";
+import { ReviewSection } from "../../components/organisms/ReviewSection";
+import { Footer } from "../../components/organisms/Footer";
+
 export default function Home() {
   return (
-    <div className="flex justify-center">
-      <div className="items-center max-w-4xl w-full">
-        <Maintenance />
+    <>
+      <div>
+        <Banner />
       </div>
-    </div>
+      <div>
+        <About/>
+      </div>
+      <div>
+        <ServicesTabs />
+      </div>
+      <div>
+        <ReviewSection />
+      </div>
+      <div>
+        <Footer />
+      </div>
+    </>
   );
 }
