@@ -11,7 +11,7 @@ export const ServicesTabs = () => {
   const [language, setLanguage] = useState<"en" | "es">("en");
   const [activeLabel, setActiveLabel] = useState("Asphalt");
 
-  const services = [
+ const services = [
     {
       label: translateText(language, "Asphalt", "Asfalto"),
       icon: (
