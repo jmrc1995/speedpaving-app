@@ -33,10 +33,12 @@ export const metadata: Metadata = {
     title: "Speed Paving | Elizabeth, NJ",
     description:
       "High-quality paving and concrete solutions for residential and commercial properties in NJ.",
-    site: "@speedpaving", // optional if you have one
+    site: "@speedpaving", 
   },
   icons: {
-    icon: "/Asset10.svg", // or .ico/.png if preferred
+    icon: "/favicon.ico", 
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico", 
   },
   
 };
