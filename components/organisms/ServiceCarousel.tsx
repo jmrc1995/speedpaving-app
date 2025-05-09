@@ -1,8 +1,8 @@
 "use client";
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Phone } from "lucide-react";
+
 
 interface ServiceCarouselProps {
   images: { src: string; alt: string }[];
@@ -10,6 +10,7 @@ interface ServiceCarouselProps {
   subtitle: string;
   features: { title: string; description: string }[];
 }
+
 export const ServiceCarousel = ({
   images,
   title,
@@ -17,6 +18,10 @@ export const ServiceCarousel = ({
   features,
 }: ServiceCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [images]);
 
   const handlePrev = () => {
     setCurrentIndex(
