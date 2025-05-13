@@ -42,7 +42,7 @@ export const About = () => {
         {/* Left: Image */}
         <div className="w-full lg:w-1/2 rounded-lg overflow-hidden shadow-lg">
           <Image
-            src="/sp--wilmer_1--pic.jpg"
+            src="/sp_banner-photo-1.jpeg"
             alt="About Speed Paving"
             width={800}
             height={600}
